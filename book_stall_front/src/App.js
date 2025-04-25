@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AdminRedirect from './components/AdminRedirect';
-import Cart from './components/Cart';
+import Index from './components/index';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AdminRedirect />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/main" element={<Index />} />
       </Routes>
     </BrowserRouter>
   );
