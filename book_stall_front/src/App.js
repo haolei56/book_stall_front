@@ -1,14 +1,33 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import AdminRedirect from './components/AdminRedirect';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Index from './components/index';
+import Login from './components/login'; // Import the Login component
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<AdminRedirect />} />
-        <Route path="/main" element={<Index />} />
+        {/* 根路径重定向到首页 */}
+        <Route path="/" element={<Navigate to="/index" replace />} />
+        
+        {/* 首页路由组 */}
+        <Route path="/index" element={<Index />}>
+          {/* 嵌套路由 */}
+          <Route path="login" element={<Login />} />
+          {/* <Route path="register" element={<Register />} />
+          <Route path="cart" element={<CartPage />} />
+          <Route path="detail/:id" element={<DetailPage />} /> */}
+        </Route>
+        
+        {/* 管理后台路由组 */}
+        {/* <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="users" element={<UserManagement />} />
+          <Route path="products" element={<ProductManagement />} />
+        </Route> */}
+        
+        {/* 未匹配路由处理 */}
+        {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>
   );

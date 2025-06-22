@@ -65,7 +65,7 @@ const Login = () => {
     e.preventDefault(); // 阻止表单默认提交行为
 
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('/index/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),

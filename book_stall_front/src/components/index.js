@@ -21,7 +21,7 @@ const Index = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api/index'); // 调用后端 API
+        const response = await fetch('/main/index'); // 调用后端 API
         const data = await response.json(); // 解析 JSON 数据
         setTypeList(data.typeList);
         setTop1List(data.top1List);

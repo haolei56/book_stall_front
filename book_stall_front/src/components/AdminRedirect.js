@@ -7,7 +7,7 @@ const AdminRedirect = () => {
 
   useEffect(() => {
     // 自动跳转到后台登录页
-    navigate('/admin/login');
+    navigate('/index/login');
   }, [navigate]);
 
   return (
